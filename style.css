@@ -262,6 +262,16 @@ body {
     font-size: clamp(24px, 4.5vw, 55px);
 }
 
+.wish-row {
+    white-space: normal;
+}
+
+.wish-row span {
+    width: 100%;
+    font-size: clamp(14px, 3vw, 24px);
+    line-height: 1.25;
+}
+
 
 /* =========================
    SPACE BETWEEN WORDS
@@ -944,7 +954,7 @@ body {
     }
 
     .icons {
-        top: 58%;
+        top: 32%;
         padding: 0;
     }
 
@@ -986,7 +996,7 @@ body {
     }
 
     .icons {
-        top: 55%;
+        top: 32%;
     }
 
     .giftbox {
