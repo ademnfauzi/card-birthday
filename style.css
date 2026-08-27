@@ -206,6 +206,10 @@ body {
    BIRTHDAY TEXT
 ========================= */
 
+.bold-text {
+  font-weight: bold;
+}
+
 .icons {
     position: absolute;
 
@@ -260,16 +264,6 @@ body {
 
 .dear-row span {
     font-size: clamp(24px, 4.5vw, 55px);
-}
-
-.wish-row {
-    white-space: normal;
-}
-
-.wish-row span {
-    width: 100%;
-    font-size: clamp(14px, 3vw, 24px);
-    line-height: 1.25;
 }
 
 
@@ -954,7 +948,7 @@ body {
     }
 
     .icons {
-        top: 32%;
+        top: 58%;
         padding: 0;
     }
 
@@ -996,7 +990,7 @@ body {
     }
 
     .icons {
-        top: 32%;
+        top: 55%;
     }
 
     .giftbox {
