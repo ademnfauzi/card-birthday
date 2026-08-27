@@ -1,0 +1,1010 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background: #07b9f5;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.merrywrap {
+    position: absolute;
+
+    top: 40px;
+    right: 40px;
+    bottom: 40px;
+    left: 40px;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   GIFT BOX
+========================= */
+
+.giftbox {
+    position: absolute;
+
+    width: 300px;
+    height: 200px;
+
+    left: 50%;
+    bottom: 0;
+
+    margin-left: -150px;
+
+    z-index: 10;
+
+    cursor: pointer;
+}
+
+.giftbox > div {
+    background: #34495e;
+    position: absolute;
+}
+
+.giftbox > div:after,
+.giftbox > div:before {
+    position: absolute;
+    content: "";
+    top: 0;
+}
+
+
+/* =========================
+   CLICK ME TEXT
+========================= */
+
+.giftbox:after {
+    position: absolute;
+
+    color: #ffffff;
+
+    width: 100%;
+
+    content: "Click Me!";
+
+    left: 0;
+    bottom: -40px;
+
+    font-size: 24px;
+    font-weight: bold;
+
+    text-align: center;
+
+    transform: rotate(-5deg);
+
+    transition: opacity 0.3s;
+}
+
+
+/* =========================
+   GIFT COVER
+========================= */
+
+.giftbox .cover {
+    width: 100%;
+
+    top: 0;
+    left: 0;
+
+    height: 25%;
+
+    z-index: 2;
+}
+
+.giftbox .cover:before {
+    position: absolute;
+
+    height: 100%;
+
+    left: 50%;
+
+    width: 50px;
+
+    transform: translateX(-50%);
+
+    background: #ee0303;
+}
+
+
+/* =========================
+   GIFT BOW
+========================= */
+
+.giftbox .cover > div {
+    position: absolute;
+
+    width: 50px;
+    height: 50px;
+
+    left: 50%;
+    top: -50px;
+
+    transform: translateX(-50%);
+}
+
+.giftbox .cover > div:before,
+.giftbox .cover > div:after {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    content: "";
+
+    box-shadow: inset 0 0 0 15px #fdc56d;
+
+    border-radius: 30px;
+
+    transform-origin: 50% 100%;
+}
+
+.giftbox .cover > div:before {
+    transform: translateX(-45%) skewY(40deg);
+}
+
+.giftbox .cover > div:after {
+    transform: translateX(45%) skewY(-40deg);
+}
+
+
+/* =========================
+   GIFT BODY
+========================= */
+
+.giftbox .box {
+    right: 5%;
+    left: 5%;
+
+    height: 80%;
+
+    bottom: 0;
+}
+
+.giftbox .box:before {
+    width: 50px;
+    height: 100%;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background: #fdc56d;
+}
+
+.giftbox .box:after {
+    width: 100%;
+    height: 30px;
+
+    background: rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================
+   BIRTHDAY TEXT
+========================= */
+
+.icons {
+    position: absolute;
+
+    left: 0;
+    top: 68%;
+
+    width: 100%;
+
+    padding: 0 20px;
+
+    transform: translateY(-50%);
+
+    z-index: 5;
+}
+
+.icons .row {
+    width: 100%;
+
+    text-align: center;
+
+    white-space: nowrap;
+
+    margin: 10px 0;
+}
+
+.icons .row span {
+    color: #9cf25b;
+
+    text-shadow:
+        clamp(2px, 0.5vw, 5px)
+        clamp(2px, 0.5vw, 5px)
+        0
+        #ca3121;
+
+    font-size: clamp(28px, 6vw, 70px);
+
+    font-weight: bold;
+
+    display: inline-block;
+
+    opacity: 0;
+
+    transition:
+        transform 0.6s ease,
+        opacity 0.7s ease;
+}
+
+
+/* =========================
+   DEAR LEON SMALLER
+========================= */
+
+.dear-row span {
+    font-size: clamp(24px, 4.5vw, 55px);
+}
+
+
+/* =========================
+   SPACE BETWEEN WORDS
+========================= */
+
+.icons .row span.space {
+    width: clamp(8px, 1.5vw, 20px);
+
+    font-size: 0;
+}
+
+
+/* =========================
+   STEP 1
+   GIFT SHAKES
+========================= */
+
+.step-1 .giftbox {
+    animation: wobble 0.5s linear infinite;
+}
+
+.step-1 .giftbox .cover {
+    animation: wobble 0.5s linear infinite 0.1s;
+}
+
+
+/* =========================
+   HIDE TEXT
+========================= */
+
+.step-1 .icons .row span {
+    opacity: 0;
+
+    transform: translateY(500px);
+}
+
+
+/* =========================
+   STEP 2
+   OPEN GIFT
+========================= */
+
+.step-2 .giftbox:after {
+    opacity: 0;
+}
+
+.step-2 .giftbox .cover {
+    animation: flyUp 0.8s ease-in forwards;
+}
+
+.step-2 .giftbox .box {
+    animation: flyDown 0.5s ease-in 0.1s forwards;
+}
+
+
+/* =========================
+   SHOW TEXT
+========================= */
+
+.step-2 .icons .row span {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================
+   LETTER DELAYS
+========================= */
+
+.step-2 .row span:nth-child(1) {
+    transition-delay: 0.05s;
+}
+
+.step-2 .row span:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.step-2 .row span:nth-child(3) {
+    transition-delay: 0.15s;
+}
+
+.step-2 .row span:nth-child(4) {
+    transition-delay: 0.2s;
+}
+
+.step-2 .row span:nth-child(5) {
+    transition-delay: 0.25s;
+}
+
+.step-2 .row span:nth-child(6) {
+    transition-delay: 0.3s;
+}
+
+.step-2 .row span:nth-child(7) {
+    transition-delay: 0.35s;
+}
+
+.step-2 .row span:nth-child(8) {
+    transition-delay: 0.4s;
+}
+
+.step-2 .row span:nth-child(9) {
+    transition-delay: 0.45s;
+}
+
+.step-2 .row span:nth-child(10) {
+    transition-delay: 0.5s;
+}
+
+.step-2 .row span:nth-child(11) {
+    transition-delay: 0.55s;
+}
+
+.step-2 .row span:nth-child(12) {
+    transition-delay: 0.6s;
+}
+
+.step-2 .row span:nth-child(13) {
+    transition-delay: 0.65s;
+}
+
+.step-2 .row span:nth-child(14) {
+    transition-delay: 0.7s;
+}
+
+
+/* =========================
+   STEP 3 / STEP 4
+   HIDE GIFT
+========================= */
+
+.step-3 .giftbox,
+.step-4 .giftbox {
+    opacity: 0;
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   KEEP TEXT VISIBLE
+========================= */
+
+.step-3 .icons .row span,
+.step-4 .icons .row span {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================
+   TEXT WOBBLE
+========================= */
+
+.step-3 .icons .row span,
+.step-4 .icons .row span {
+    animation: textWobble 0.8s ease-in-out infinite alternate;
+}
+
+.step-3 .icons .row span:nth-child(even),
+.step-4 .icons .row span:nth-child(even) {
+    animation-duration: 1s;
+}
+
+
+/* =========================
+   CAKE
+========================= */
+
+.cake {
+    position: absolute;
+
+    width: 250px;
+    height: 230px;
+
+    left: 50%;
+    top: 8%;
+
+    z-index: 20;
+
+    opacity: 0;
+
+    --cake-scale: 1;
+
+    transform:
+        translate(-50%, 120vh)
+        scale(var(--cake-scale));
+}
+
+.cake > * {
+    position: absolute;
+}
+
+
+/* =========================
+   CAKE ANIMATION
+========================= */
+
+.step-4 .cake {
+    animation:
+        cakeUp
+        1.5s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        forwards;
+}
+
+@keyframes cakeUp {
+
+    0% {
+        transform:
+            translate(-50%, 120vh)
+            scale(var(--cake-scale));
+
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    85% {
+        transform:
+            translate(-50%, -10%)
+            scale(var(--cake-scale));
+
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translate(-50%, 0)
+            scale(var(--cake-scale));
+
+        opacity: 1;
+    }
+}
+
+
+/* =========================
+   PLATE
+========================= */
+
+.plate {
+    width: 270px;
+    height: 110px;
+
+    bottom: -10px;
+    left: -10px;
+
+    background-color: #cccccc;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 2px 0 #aaaaaa,
+        0 4px 0 #aaaaaa,
+        0 5px 40px rgba(0, 0, 0, 0.5);
+}
+
+
+/* =========================
+   CAKE LAYERS
+========================= */
+
+.layer {
+    width: 250px;
+    height: 100px;
+
+    display: block;
+
+    border-radius: 50%;
+
+    background-color: #553c13;
+
+    box-shadow:
+        0 2px 0 #63491f,
+        0 4px 0 #49330f,
+        0 6px 0 #49330f,
+        0 8px 0 #49330f,
+        0 10px 0 #49330f,
+        0 12px 0 #49330f,
+        0 14px 0 #49330f,
+        0 16px 0 #49330f,
+        0 18px 0 #49330f,
+        0 20px 0 #49330f,
+        0 22px 0 #49330f,
+        0 24px 0 #49330f,
+        0 26px 0 #49330f,
+        0 28px 0 #49330f,
+        0 30px 0 #49330f;
+}
+
+.layer-top {
+    top: 0;
+}
+
+.layer-middle {
+    top: 33px;
+}
+
+.layer-bottom {
+    top: 66px;
+}
+
+
+/* =========================
+   ICING
+========================= */
+
+.icing {
+    top: 2px;
+    left: 5px;
+
+    background-color: #f0e4d0;
+
+    width: 240px;
+    height: 90px;
+
+    border-radius: 50%;
+}
+
+.icing:before {
+    content: "";
+
+    position: absolute;
+
+    top: 4px;
+    right: 5px;
+    bottom: 6px;
+    left: 5px;
+
+    background-color: #f7ecda;
+
+    box-shadow:
+        0 0 4px #fff8e8,
+        0 0 4px #fff8e8,
+        0 0 4px #fff8e8;
+
+    border-radius: 50%;
+
+    z-index: 1;
+}
+
+
+/* =========================
+   ICING DRIPS
+========================= */
+
+.drip {
+    display: block;
+
+    width: 50px;
+    height: 60px;
+
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+
+    background-color: #f0e4d0;
+}
+
+.drip1 {
+    top: 53px;
+    left: 5px;
+
+    width: 40px;
+    height: 48px;
+
+    transform: skewY(15deg);
+}
+
+.drip2 {
+    top: 69px;
+    left: 181px;
+
+    transform: skewY(-15deg);
+}
+
+.drip3 {
+    top: 54px;
+    left: 90px;
+
+    width: 80px;
+
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+
+
+/* =========================
+   CANDLE
+========================= */
+
+.candle {
+    background-color: #7b020b;
+
+    width: 16px;
+    height: 50px;
+
+    border-radius: 8px / 4px;
+
+    top: -20px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 10;
+}
+
+.candle:before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 16px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background-color: #a60310;
+}
+
+
+/* =========================
+   FLAME
+========================= */
+
+.flame {
+    position: absolute;
+
+    background-color: orange;
+
+    width: 15px;
+    height: 35px;
+
+    border-radius:
+        10px
+        10px
+        10px
+        10px
+        /
+        25px
+        25px
+        10px
+        10px;
+
+    top: -34px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 10;
+
+    box-shadow:
+        0 0 10px rgba(255, 165, 0, 0.5),
+        0 0 20px rgba(255, 165, 0, 0.5),
+        0 0 60px rgba(255, 165, 0, 0.5),
+        0 0 80px rgba(255, 165, 0, 0.5);
+
+    transform-origin: 50% 90%;
+
+    animation:
+        flicker
+        1s
+        ease-in-out
+        alternate
+        infinite;
+}
+
+
+/* =========================
+   GIFT ANIMATIONS
+========================= */
+
+@keyframes wobble {
+
+    25% {
+        transform: rotate(4deg);
+    }
+
+    75% {
+        transform: rotate(-3deg);
+    }
+}
+
+
+@keyframes flyUp {
+
+    75% {
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(-1000px)
+            rotate(20deg);
+
+        opacity: 0;
+    }
+}
+
+
+@keyframes flyDown {
+
+    75% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(300px);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   TEXT ANIMATION
+========================= */
+
+@keyframes textWobble {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(-2deg);
+    }
+
+    100% {
+        transform:
+            translateY(-5px)
+            rotate(2deg);
+    }
+}
+
+
+/* =========================
+   FLAME ANIMATION
+========================= */
+
+@keyframes flicker {
+
+    0% {
+        transform:
+            translateX(-50%)
+            skewX(5deg);
+    }
+
+    25% {
+        transform:
+            translateX(-50%)
+            skewX(-5deg);
+    }
+
+    50% {
+        transform:
+            translateX(-50%)
+            skewX(10deg);
+    }
+
+    75% {
+        transform:
+            translateX(-50%)
+            skewX(-10deg);
+    }
+
+    100% {
+        transform:
+            translateX(-50%)
+            skewX(5deg);
+    }
+}
+
+
+/* =========================
+   LARGE DESKTOP
+========================= */
+
+@media (min-width: 1200px) {
+
+    .cake {
+        --cake-scale: 1;
+        top: 8%;
+    }
+
+    .icons {
+        top: 68%;
+    }
+
+}
+
+
+/* =========================
+   TABLET / SMALL LAPTOP
+========================= */
+
+@media (max-width: 1024px) {
+
+    .merrywrap {
+        top: 30px;
+        right: 30px;
+        bottom: 30px;
+        left: 30px;
+    }
+
+    .cake {
+        --cake-scale: 0.85;
+        top: 6%;
+    }
+
+    .icons {
+        top: 66%;
+    }
+
+    .giftbox {
+        transform: scale(0.85);
+        transform-origin: bottom center;
+    }
+
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 768px) {
+
+    .merrywrap {
+        top: 20px;
+        right: 15px;
+        bottom: 20px;
+        left: 15px;
+    }
+
+    .cake {
+        --cake-scale: 0.72;
+        top: 4%;
+    }
+
+    .icons {
+        top: 66%;
+        padding: 0 10px;
+    }
+
+    .giftbox {
+        transform: scale(0.75);
+        transform-origin: bottom center;
+    }
+
+    .giftbox:after {
+        font-size: 20px;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+    .merrywrap {
+        top: 130px;
+        right: 5px;
+        bottom: 15px;
+        left: 5px;
+    }
+
+    .cake {
+        --cake-scale: 0.58;
+        top: 50%;
+    }
+
+    .icons {
+        top: 100%;
+        padding: 0 5px;
+    }
+
+    .icons .row {
+        margin: 8px 0;
+    }
+
+    .icons .row span {
+        font-size: clamp(24px, 8vw, 38px);
+
+        text-shadow:
+            3px
+            3px
+            0
+            #ca3121;
+    }
+
+    .dear-row span {
+        font-size: clamp(20px, 7vw, 32px);
+    }
+
+    .giftbox {
+        transform: scale(0.6);
+        transform-origin: bottom center;
+    }
+
+    .giftbox:after {
+        font-size: 18px;
+        bottom: -50px;
+    }
+
+}
+
+
+/* =========================
+   VERY SMALL MOBILE
+========================= */
+
+@media (max-width: 360px) {
+
+    .cake {
+        --cake-scale: 0.5;
+        top: 0;
+    }
+
+    .icons {
+        top: 63%;
+    }
+
+    .icons .row span {
+        font-size: 24px;
+    }
+
+    .dear-row span {
+        font-size: 21px;
+    }
+
+    .giftbox {
+        transform: scale(0.52);
+        transform-origin: bottom center;
+    }
+
+}
